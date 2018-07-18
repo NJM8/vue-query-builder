@@ -1,6 +1,9 @@
 Vue Query Builder
 ======
 
+This version is extended from the original to use tailwindCSS for some simple styling rather than bootstrap. It makes no changes to functionality of the original package which is credited to the original creator. 
+
+Assumes you have added tailwind classes for buttons: bg-primary and fonts: font-primary.
 
 #### A UI component for building complex queries with nested conditionals.
 
