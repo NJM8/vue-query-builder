@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-vue-query-builder",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "main": "./dist/VueQueryBuilder.common.js",
   "scripts": {
     "serve": "vue-cli-service serve --name VueQueryBuilder src/main.js",
