@@ -20,17 +20,17 @@
     "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
     "@vue/cli-plugin-unit-jest": "^3.0.0-beta.15",
     "@vue/cli-service": "^3.0.0-beta.15",
-    "@vue/eslint-config-standard": "^3.0.0-rc.3",
+    "@vue/eslint-config-standard": "^3.0.0-rc.5",
     "@vue/test-utils": "^1.0.0-beta.16",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "bootstrap": "^3.3.7",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.16",
-    "vuepress": "^0.10.2",
-    "bootstrap": "^3.3.7"
+    "vuepress": "^0.10.2"
   },
   "browserslist": [
     "> 1%",
