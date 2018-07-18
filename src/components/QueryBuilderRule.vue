@@ -1,20 +1,20 @@
 <template>
-  <div class="vqb-rule" :class="{ 'p-1': styled }">
-    <div :class="{ 'flex items-center': styled }">
-      <label :class="{ 'text-lg font-normal px-4': styled }">{{ rule.label }}</label>
+  <div class="vqb-rule p-1">
+    <div class="flex items-center">
+      <label class="text-lg font-normal px-4">{{ rule.label }}</label>
 
-      <select v-if="typeof rule.operands !== 'undefined'" v-model="query.selectedOperand" :class="{ 'bg-grey-lighter rounded transition h-6 px-4 mx-2': styled }">
+      <select v-if="typeof rule.operands !== 'undefined'" v-model="query.selectedOperand" class="bg-grey-lighter rounded transition h-6 px-4 mx-2">
         <option v-for="(operand, index) in rule.operands" :key="index">{{ operand }}</option>
       </select>
 
-      <select v-if="! isMultipleChoice" v-model="query.selectedOperator" :class="{ 'bg-grey-lighter rounded transition h-6 px-4 mx-2': styled }">
+      <select v-if="! isMultipleChoice" v-model="query.selectedOperator" class="bg-grey-lighter rounded transition h-6 px-4 mx-2">
         <option v-for="(operator, index) in rule.operators" v-bind:value="operator" :key="index">
           {{ operator }}
         </option>
       </select>
 
-      <input :class="{ 'bg-grey-lighter rounded font-primary font-light appearance-none py-1 px-4 font-normal': styled }" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
-      <input :class="{ 'bg-grey-lighter rounded font-primary font-light appearance-none py-1 px-4 font-normal': styled }" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
+      <input class="bg-grey-lighter rounded font-primary font-light appearance-none py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
+      <input class="bg-grey-lighter rounded font-primary font-light appearance-none py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
 
       <template v-if="isCustomComponent">
         <component :value="query.value" @input="updateQuery" :is="rule.component"></component>
@@ -34,7 +34,7 @@
 
       <select
         v-if="rule.inputType === 'select'"
-        :class="{ 'bg-grey-lighter rounded transition h-6 px-4 mx-2': styled }"
+        class="bg-grey-lighter rounded transition h-6 px-4 mx-2"
         :multiple="rule.type === 'multi-select'"
         v-model="query.value">
 
@@ -49,7 +49,7 @@
 
       </select>
 
-      <button type="button" :class="{ 'text-lg': styled }" @click="remove" v-html="labels.removeRule">X</button>
+      <button type="button" class="text-lg" @click="remove" v-html="labels.removeRule">X</button>
     </div>
   </div>
 </template>

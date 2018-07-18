@@ -4,23 +4,23 @@
       <div class="match-type-container">
         <div>
           <label for="vqb-match-type">{{ labels.matchType }}</label>
-          <select id="vqb-match-type" :class="{ 'bg-grey-lighter rounded transition h-6 px-4 mx-2': styled }" v-model="query.logicalOperator">
+          <select id="vqb-match-type" class="bg-grey-lighter rounded transition h-6 px-4 mx-2" v-model="query.logicalOperator">
             <option>{{ labels.matchTypeAll }}</option>
             <option>{{ labels.matchTypeAny }}</option>
           </select>
         </div>
-        <button type="button" :class="{ 'text-lg': styled }" v-if="this.depth > 1" @click="remove" v-html="labels.removeGroup">X</button>
+        <button type="button" class="text-lg" v-if="this.depth > 1" @click="remove" v-html="labels.removeGroup">X</button>
       </div>
     </div>
 
     <div class="vqb-group-body">
-      <div class="rule-actions" :class="{ 'py-2 ml-2': styled }">
+      <div class="rule-actions" class="py-2 ml-2">
         <div >
-          <select v-model="selectedRule" :class="{ 'bg-grey-lighter rounded transition h-6 px-4 mx-2': styled }">
+          <select v-model="selectedRule" class="bg-grey-lighter rounded transition h-6 px-4 mx-2">
             <option v-for="(rule, index) in rules" :key="index" :value="rule">{{ rule.label }}</option>
           </select>
-          <button type="button" @click="addRule" :class="{ 'bg-primary rounded transition text-white py-1 px-4 mx-2': styled }" v-html="labels.addRule"></button>
-          <button type="button" :class="{ 'bg-primary rounded transition text-white py-1 px-4 mx-2': styled }" v-if="this.depth < this.maxDepth" @click="addGroup" v-html="labels.addGroup"></button>
+          <button type="button" @click="addRule" class="bg-primary rounded transition text-white py-1 px-4 mx-2" v-html="labels.addRule"></button>
+          <button type="button" class="bg-primary rounded transition text-white py-1 px-4 mx-2" v-if="this.depth < this.maxDepth" @click="addGroup" v-html="labels.addGroup"></button>
         </div>
       </div>
 
