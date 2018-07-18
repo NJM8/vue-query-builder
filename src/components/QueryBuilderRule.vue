@@ -21,13 +21,13 @@
       </template>
 
       <div class="checkbox" v-if="rule.inputType === 'checkbox'">
-        <label class="px-1" v-for="(choice, index) in rule.choices" :key="index">
+        <label class="px-2 font-normal" v-for="(choice, index) in rule.choices" :key="index">
           <input type="checkbox" :value="choice.value" v-model="query.value"> {{ choice.label }}
         </label>
       </div>
 
       <div class="radio" v-if="rule.inputType === 'radio'">
-        <label class="px-1" v-for="(choice, index) in rule.choices" :key="index">
+        <label class="px-2 font-normal" v-for="(choice, index) in rule.choices" :key="index">
           <input type="radio" :value="choice.value" v-model="query.value"> {{ choice.label }}
         </label>
       </div>
@@ -49,81 +49,81 @@
 
       </select>
 
-      <button type="button" class="bg-primary rounded transition text-lg text-white py-1 px-4 mx-2" @click="remove" v-html="labels.removeRule">X</button>
+      <button type="button" class="bg-primary rounded transition text-2xl text-white px-3 mx-2" @click="remove" v-html="labels.removeRule">X</button>
     </div>
   </div>
 </template>
 
 <script>
-import deepClone from "../utilities.js";
+import deepClone from '../utilities.js';
 
 export default {
-  name: "query-builder-rule",
+  name: 'query-builder-rule',
 
-  props: ["query", "index", "rule", "styled", "labels"],
+  props: ['query', 'index', 'rule', 'styled', 'labels'],
 
-  beforeMount() {
-    if (this.rule.type === "custom-component") {
-      this.$options.components[this.id] = this.rule.component;
+  beforeMount () {
+    if (this.rule.type === 'custom-component') {
+      this.$options.components[this.id] = this.rule.component
     }
   },
 
   methods: {
-    remove: function() {
-      this.$emit("child-deletion-requested", this.index);
+    remove: function () {
+      this.$emit('child-deletion-requested', this.index)
     },
-    updateQuery(value) {
-      let updated_query = deepClone(this.query);
-      updated_query.value = value;
-      this.$emit("update:query", updated_query);
+    updateQuery (value) {
+      let updated_query = deepClone(this.query)
+      updated_query.value = value
+      this.$emit('update:query', updated_query)
     }
   },
 
   computed: {
-    isMultipleChoice() {
-      return ["radio", "checkbox", "select"].indexOf(this.rule.inputType) >= 0;
+    isMultipleChoice () {
+      return ['radio', 'checkbox', 'select'].indexOf(this.rule.inputType) >= 0
     },
 
-    isCustomComponent() {
-      return this.rule.type === "custom-component";
+    isCustomComponent () {
+      return this.rule.type === 'custom-component';
     },
 
-    selectOptions() {
-      if (typeof this.rule.choices === "undefined") {
-        return {};
+    selectOptions () {
+      if (typeof this.rule.choices === 'undefined') {
+        return {}
       }
 
-      return this.rule.choices.reduce(function(groups, item, index) {
-        let key = item["group"];
-        if (typeof key !== "undefined") {
-          groups[key] = groups[key] || [];
-          groups[key].push(item);
+      return this.rule.choices.reduce(function (groups, item, index) {
+        let key = item['group']
+        if (typeof key !== 'undefined') {
+          groups[key] = groups[key] || []
+          groups[key].push(item)
         } else {
-          groups[index] = item;
+          groups[index] = item
         }
 
-        return groups;
-      }, {});
+        return groups
+      }, {})
     }
   },
 
-  mounted() {
-    let updated_query = deepClone(this.query);
+  mounted () {
+    let updated_query = deepClone(this.query)
 
     // Set a default value for these types if one isn't provided already (via initialQuery on root builder)
     if (this.query.value === null) {
-      if (this.rule.inputType === "checkbox") {
-        updated_query.value = [];
+      if (this.rule.inputType === 'checkbox') {
+        updated_query.value = []
       }
-      if (this.rule.type === "select") {
-        updated_query.value = this.rule.choices[0].value;
+      if (this.rule.type === 'select') {
+        updated_query.value = this.rule.choices[0].value
       }
-      if (this.rule.type === "custom-component") {
-        updated_query.value = this.rule.default || null;
+      if (this.rule.type === 'custom-component') {
+        updated_query.value = this.rule.default || null
       }
 
-      this.$emit("update:query", updated_query);
+      this.$emit('update:query', updated_query)
     }
   }
-};
+}
 </script>
