@@ -12,4 +12,3 @@ Vue Query Builder is a user interface that makes it easy for your users to creat
 
 [Demo and documentation](https://dabernathy89.github.io/vue-query-builder/)
 
-![Demo Screenshot](https://raw.githubusercontent.com/dabernathy89/vue-query-builder/master/public/demo-screenshot.png "Demo screenshot")
