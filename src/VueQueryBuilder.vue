@@ -3,18 +3,19 @@
     <query-builder-group
       :index="0"
       :query.sync="query"
-      :ruleTypes="ruleTypes"
+      :rule-types="ruleTypes"
       :rules="mergedRules"
-      :maxDepth="maxDepth"
+      :max-depth="maxDepth"
       :depth="depth"
       :styled="styled"
       :labels="mergedLabels"
       type="query-builder-group"
-      ></query-builder-group>
+    />
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import QueryBuilderGroup from "./components/QueryBuilderGroup.vue";
 import deepClone from "./utilities.js";
 

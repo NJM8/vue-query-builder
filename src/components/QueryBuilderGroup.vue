@@ -1,9 +1,9 @@
 <template>
-  <div class="vqb-group">
+  <div class="vqb-group font-secondary">
     <div class="vqb-group-heading">
       <div class="match-type-container">
         <div>
-          <label for="vqb-match-type">{{ labels.matchType }}</label>
+          <label for="vqb-match-type" class="text-lg font-normal px-4">{{ labels.matchType }}</label>
           <select id="vqb-match-type" class="bg-grey-lighter rounded transition h-6 px-4 mx-2" v-model="query.logicalOperator">
             <option>{{ labels.matchTypeAll }}</option>
             <option>{{ labels.matchTypeAny }}</option>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="vqb-group-body">
-      <div class="rule-actions" class="py-2 ml-2">
+      <div class="rule-actions py-2 ml-2">
         <div >
           <select v-model="selectedRule" class="bg-grey-lighter rounded transition h-6 px-4 mx-2">
             <option v-for="(rule, index) in rules" :key="index" :value="rule">{{ rule.label }}</option>

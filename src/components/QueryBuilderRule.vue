@@ -1,5 +1,5 @@
 <template>
-  <div class="vqb-rule p-1">
+  <div class="vqb-rule p-1 font-secondary">
     <div class="flex items-center">
       <label class="text-lg font-normal px-4">{{ rule.label }}</label>
 
@@ -13,21 +13,21 @@
         </option>
       </select>
 
-      <input class="bg-grey-lighter rounded font-primary font-light appearance-none py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
-      <input class="bg-grey-lighter rounded font-primary font-light appearance-none py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
+      <input class="bg-grey-lighter rounded appearance-none py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
+      <input class="bg-grey-lighter rounded appearance-none py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
 
       <template v-if="isCustomComponent">
         <component :value="query.value" @input="updateQuery" :is="rule.component"></component>
       </template>
 
       <div class="checkbox" v-if="rule.inputType === 'checkbox'">
-        <label v-for="(choice, index) in rule.choices" :key="index">
+        <label class="px-1" v-for="(choice, index) in rule.choices" :key="index">
           <input type="checkbox" :value="choice.value" v-model="query.value"> {{ choice.label }}
         </label>
       </div>
 
       <div class="radio" v-if="rule.inputType === 'radio'">
-        <label v-for="(choice, index) in rule.choices" :key="index">
+        <label class="px-1" v-for="(choice, index) in rule.choices" :key="index">
           <input type="radio" :value="choice.value" v-model="query.value"> {{ choice.label }}
         </label>
       </div>
@@ -49,7 +49,7 @@
 
       </select>
 
-      <button type="button" class="text-lg" @click="remove" v-html="labels.removeRule">X</button>
+      <button type="button" class="bg-primary rounded transition text-lg text-white py-1 px-4 mx-2" @click="remove" v-html="labels.removeRule">X</button>
     </div>
   </div>
 </template>
