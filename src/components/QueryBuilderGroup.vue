@@ -3,7 +3,7 @@
     <div class="vqb-group-heading">
       <div class="match-type-container">
         <div>
-          <label for="vqb-match-type" class="text-lg font-normal px-4">{{ labels.matchType }}</label>
+          <label for="vqb-match-type" class="text-lg font-normal px-4 mb-2">{{ labels.matchType }}</label>
           <select id="vqb-match-type" class="bg-grey-lighter rounded transition h-6 px-4 mx-2" v-model="query.logicalOperator">
             <option>{{ labels.matchTypeAll }}</option>
             <option>{{ labels.matchTypeAny }}</option>
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import QueryBuilderRule from "./QueryBuilderRule.vue";
 import deepClone from "../utilities.js";
 
