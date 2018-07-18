@@ -1,5 +1,5 @@
 {
-  "name": "vue-query-builder",
+  "name": "tailwindcss-vue-query-builder",
   "version": "0.5.2",
   "main": "./dist/VueQueryBuilder.common.js",
   "scripts": {
