@@ -31,7 +31,7 @@ var defaultLabels = {
 };
 
 export default {
-  name: 'vue-query-builder',
+  name: "vue-query-builder",
 
   components: {
     QueryBuilderGroup
@@ -140,35 +140,19 @@ export default {
     }
   },
 
-<<<<<<< HEAD
   mounted() {
-    this.$emit("query-updated", deepClone(this.query));
-
     this.$watch(
       "query",
-      function(newQuery) {
-        this.$emit("query-updated", deepClone(newQuery));
+      newQuery => {
+        this.$emit("input", deepClone(newQuery));
       },
       {
         deep: true
       }
     );
 
-    if (typeof this.$options.propsData.initialQuery !== "undefined") {
-      this.query = deepClone(this.$options.propsData.initialQuery);
-=======
-  mounted () {
-    this.$watch(
-      'query',
-      newQuery => {
-        this.$emit('input', deepClone(newQuery));
-      }, {
-      deep: true
-    });
-
-    if ( typeof this.$options.propsData.value !== "undefined" ) {
+    if (typeof this.$options.propsData.value !== "undefined") {
       this.query = Object.assign(this.query, this.$options.propsData.value);
->>>>>>> upstream/master
     }
   }
 };
