@@ -13,8 +13,8 @@
         </option>
       </select>
 
-      <input class="bg-grey-lighter rounded appearance-none px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
-      <input class="bg-grey-lighter rounded appearance-none px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
+      <input class="bg-grey-lighter rounded appearance-none py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
+      <input class="bg-grey-lighter rounded appearance-none py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
 
       <template v-if="isCustomComponent">
         <component :value="query.value" @input="updateQuery" :is="rule.component"></component>
