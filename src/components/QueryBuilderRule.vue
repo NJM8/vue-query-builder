@@ -1,6 +1,6 @@
 <template>
   <div class="vqb-rule font-secondary">
-    <div class="flex flex-wrap content-around items-center py-2">
+    <div class="flex flex-wrap content-around items-center py-1">
       <label class="text-lg font-normal pr-4">{{ rule.label }}</label>
 
       <select v-if="typeof rule.operands !== 'undefined'" v-model="query.selectedOperand" class="bg-grey-lighter rounded transition h-6 px-4 mx-2">
@@ -13,8 +13,8 @@
         </option>
       </select>
 
-      <input class="bg-grey-lighter rounded appearance-none py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
-      <input class="bg-grey-lighter rounded appearance-none py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
+      <input class="bg-grey-lighter rounded appearance-none my-1 py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
+      <input class="bg-grey-lighter rounded appearance-none my-1 py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
 
       <template v-if="isCustomComponent">
         <component :value="query.value" @input="updateQuery" :is="rule.component"></component>
