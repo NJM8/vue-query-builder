@@ -1,6 +1,6 @@
 <template>
   <div class="vqb-rule p-1 font-secondary">
-    <div class="flex flex-wrap items-center">
+    <div class="flex flex-wrap content-around items-center">
       <label class="text-lg font-normal pr-4">{{ rule.label }}</label>
 
       <select v-if="typeof rule.operands !== 'undefined'" v-model="query.selectedOperand" class="bg-grey-lighter rounded transition h-6 px-4 mx-2">

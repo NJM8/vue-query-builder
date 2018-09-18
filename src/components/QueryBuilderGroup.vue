@@ -14,7 +14,7 @@
     </div>
 
     <div class="vqb-group-body">
-      <div class="rule-actions py-2 ml-2">
+      <div class="rule-actions py-2">
         <div >
           <select v-model="selectedRule" class="bg-grey-lighter rounded transition h-6 pr-4 mx-2">
             <option v-for="(rule, index) in rules" :key="index" :value="rule">{{ rule.label }}</option>
