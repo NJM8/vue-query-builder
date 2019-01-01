@@ -15,6 +15,9 @@
 </template>
 
 <script>
+// move this line up for local style testing
+//  <style src="./styles/app.css"></style>
+
 /* eslint-disable */
 import QueryBuilderGroup from "./components/QueryBuilderGroup.vue";
 import deepClone from "./utilities.js";

@@ -12,6 +12,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "tailwindcss": "^0.7.3",
     "vue": "^2.5.16"
   },
   "devDependencies": {
