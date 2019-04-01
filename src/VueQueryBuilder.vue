@@ -10,6 +10,7 @@
       :styled="styled"
       :labels="mergedLabels"
       type="query-builder-group"
+      @enter-pressed="$emit('enter-pressed')"
     />
   </div>
 </template>

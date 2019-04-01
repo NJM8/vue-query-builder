@@ -39,7 +39,8 @@
           :depth="depth + 1"
           :styled="styled"
           :labels="labels"
-          v-on:child-deletion-requested="removeChild">
+          v-on:child-deletion-requested="removeChild"
+          @enter-pressed="$emit('enter-pressed')">
         </component>
       </div>
     </div>

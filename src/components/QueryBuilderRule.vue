@@ -13,8 +13,8 @@
         </option>
       </select>
 
-      <input class="bg-grey-lighter rounded appearance-none my-1 py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder">
-      <input class="bg-grey-lighter rounded appearance-none my-1 py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value">
+      <input class="bg-grey-lighter rounded appearance-none my-1 py-1 px-4" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder" @keypress.enter.stop="$emit('enter-pressed')">
+      <input class="bg-grey-lighter rounded appearance-none my-1 py-1 px-4" v-if="rule.inputType === 'number'" type="number" v-model="query.value" @keypress.enter.stop="$emit('enter-pressed')">
 
       <template v-if="isCustomComponent">
         <component :value="query.value" @input="updateQuery" :is="rule.component"></component>
