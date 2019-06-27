@@ -73,10 +73,10 @@ export default {
       ruleTypes: {
         text: {
           operators: [
-            "equals",
-            "does not equal",
             "contains",
             "does not contain",
+            "equals",
+            "does not equal",
             "is empty",
             "is not empty",
             "begins with",
